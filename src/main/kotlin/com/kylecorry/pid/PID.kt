@@ -107,6 +107,7 @@ class PID(p: Double, i: Double, d: Double) {
      * @param deltaTime the time since the last calculate call in seconds. Defaults to the period.
      * @return the calculated PID value
      */
+    @JvmOverloads
     fun calculate(actualPosition: Double, desiredPosition: Double, deltaTime: Double = period): Double {
         val lastError = positionError
         positionError = desiredPosition - actualPosition
